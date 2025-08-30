@@ -7,7 +7,7 @@
     --dark-red: #ac2109;
     --dark: #222;
     --light: #f5f5f5;
-    --pink: #eb04c6
+    --pink: #eb04c6;
 }
 
     /*----  Déclaration des variables CSS  ----*/
@@ -15,17 +15,25 @@
     /*---- Style Globaux des pages HTML ----*/
 
     html {
-        background: #f8f8f5;
-        height: 100%;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+
     }
 
     body {
         font-family: "Exo 2", sans-serif;
         padding: 40px;
         background: var(--dark);
-        overflox-x: hidden;
-        height: 100vh;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        background-attachment: fixed;
+        min-height: 100vh;
+        padding-top: 80px;
         color: var(--light);
+    }
+
+    .navbar {
+        border-bottom: 3.5px solid var(--secondary-color);
     }
 
     .navbar-dark.bg-dark {
@@ -90,15 +98,81 @@
         font-size: 1.1rem;
     }
 
-    .navbar-toggler {
-        background: var(--light);
-        color: var(--dark-red);
-    }
+.navbar-toggler {
+    border: 2px solid var(--dark);
+    border-radius: 50%;
+    background: transparent;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .navbar-toggler-icon {
-        filter: invert(100%);
-    }
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem var(--purple);
+    border-color: var(--pink);
+}
 
+.navbar-toggler:hover {
+    border-color: var(--pink);
+    
+}
+
+/* Icône burger personnalisée */
+.navbar-toggler-icon {
+    background: none;
+    border: none;
+    width: 25px;
+    height: 20px;
+    filter: invert(100%);
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon {
+    display: block;
+    content: '';
+    height: 3px;
+    width: 100%;
+    background: var(--light);
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before {
+    position: absolute;
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    position: absolute;
+    top: 8px;
+}
+
+/* Animation du burger quand ouvert */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+    
+ 
     @keyframes pulseAnimation {
         0% {
             transform: scale(0.95);
