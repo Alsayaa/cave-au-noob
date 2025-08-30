@@ -1,0 +1,172 @@
+
+/*----  Déclaration des variables CSS  ----*/
+
+:root {
+    --primary-color: #DDB300;
+    --secondary-color: #E32E0E;
+    --dark-red: #ac2109;
+    --dark: #222;
+    --light: #f5f5f5;
+    --pink: #eb04c6
+}
+
+    /*----  Déclaration des variables CSS  ----*/
+
+    /*---- Style Globaux des pages HTML ----*/
+
+    html {
+        background: #f8f8f5;
+        height: 100%;
+    }
+
+    body {
+        font-family: "Exo 2", sans-serif;
+        padding: 40px;
+        background: var(--dark);
+        overflox-x: hidden;
+        height: 100vh;
+        color: var(--light);
+    }
+
+    .navbar-dark.bg-dark {
+        background-color: var(--primary-color) !important;
+
+    }
+
+    .img-can {
+        margin-right: 0.8rem;
+    }
+
+    .navbar-brand {
+        font-family: "Share Tech", sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--dark);
+        transition: color 0.2s ease;
+        animation: pulseAnimation 2s ease infinite;
+    }
+
+    .navbar-brand:hover {
+        color: var(--dark-red);
+
+    }
+
+    .navbar .nav-link {
+        color: var(--dark);
+        font-weight: bold;
+        transition: transform 0.5s ease !important;
+        position: relative;
+    }
+
+    .navbar .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: var(--dark-red);
+        transition: width 0.5s ease;
+    }
+
+    .navbar .nav-link:hover::before {
+        width: 100%;
+    }
+
+    .navbar .nav-link:hover {
+        transform: scale(1.1);
+
+
+    }
+
+    .navbar-nav {
+        gap: 1rem;
+    }
+
+
+    .nav-item {
+        font-size: 1.1rem;
+    }
+
+    .navbar-toggler {
+        background: var(--light);
+        color: var(--dark-red);
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(100%);
+    }
+
+    @keyframes pulseAnimation {
+        0% {
+            transform: scale(0.95);
+        }
+        75% {
+            transform: scale(1)
+        }
+        100% {
+            transform: scale(0.95);
+        }
+    }
+
+
+    @media (max-width: 991.18px) {
+
+        .navbar .nav-item {
+            margin-top: 0.5rem;
+
+        }
+
+        .navbar .nav-link:hover {
+            transform: scale(1);
+            color: var(--dark-red);
+        }
+
+        .navbar .nav-link:hover::before {
+            width: 0%;
+        }
+    }
+
+/*---- Style Globaux des pages HTML ----*/
+
+
+/*---- Section Héro ----*/
+
+
+
+.img-logo {
+    border: 5px solid var(--light);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--secondary-color);
+    margin-top: 2rem;
+    animation: glowPulse 1.8s ease infinite alternate;
+    transition: transform 0.5s, border-color 0.5s ease;
+}
+
+.img-logo:hover {
+    transform: translateY(-25px);
+    border-color: var(--pink);
+}
+
+.hero-title {
+    font-family: "Share Tech", sans-serif;
+    text-decoration: underline var(--light);
+    gap: 1rem;
+    text-underline-offset: 0.8rem;
+}
+
+.hero-can {
+    gap: 3rem;
+}
+
+@keyframes glowPulse {
+    from {box-shadow: 0 0 5px var(--secondary-color);}
+    to {box-shadow: 0 0 25px var(--secondary-color);}
+}
+
+/*---- Section Héro ----*/
+
+
+
