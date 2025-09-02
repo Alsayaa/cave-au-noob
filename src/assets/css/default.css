@@ -216,6 +216,9 @@
 .img-logo {
     border: 5px solid var(--light);
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0 0 5px var(--secondary-color);
     margin-top: 2rem;
     animation: glowPulse 1.8s ease infinite alternate;
