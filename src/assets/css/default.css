@@ -32,8 +32,12 @@
         color: var(--light);
     }
 
+    /*---- Style Globaux des pages HTML ----*/
+    
+    
     .navbar {
         border-bottom: 3.5px solid var(--secondary-color);
+        padding: 1rem;
     }
 
     .navbar-dark.bg-dark {
@@ -190,7 +194,6 @@
 
         .navbar .nav-item {
             margin-top: 0.5rem;
-
         }
 
         .navbar .nav-link:hover {
